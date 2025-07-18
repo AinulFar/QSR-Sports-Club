@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events | QSR Brands Sports & Recreation Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="hero-header animated">
+    <div class="overlay">
+<div class="nav-container animated">
+  <nav id="navbar">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+  </nav>
+</div>
+      <h1 class="animated">OUR EVENTS</h1>
+      <p class="animated">Explore and join our exciting sports and recreation activities!</p>
+    </div>
+  </header>
+
+  <!-- Highlighted Event -->
+  <section class="event-highlight animated">
+    <div class="event-content">
+      <img src="image/run.jpg" alt="Merdeka Run" class="event-image" />
+      <div class="event-details">
+        <h2>QSR Merdeka Virtual Run 2025</h2>
+        <p>Celebrate Malaysia’s independence with our exciting virtual run. Open to all members and non-members. Win exclusive medals and race kits!</p>
+        <a href="merdeka_run.html" class="btn-event">View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events (Card Style) -->
+  <h2 class="section-title">UPCOMING EVENTS</h2>
+
+  <section class="events-grid">
+    <div class="event-card">
+      <img src="image/yoga.jpg" alt="Yoga Retreat" />
+      <h3>Weekend Yoga Retreat</h3>
+      <button class="add-btn">View more</button>
+    </div>
+
+    <div class="event-card">
+      <img src="image/bowling.jpg" alt="Bowling Tournament" />
+      <h3>Bowling Tournament</h3>
+      <button class="add-btn">View more</button>
+    </div>
+
+    <div class="event-card">
+      <img src="image/hiking.jpg" alt="Hiking" />
+      <h3>Group Hiking</h3>
+      <button class="add-btn">View more</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contact us at <a href="mailto:qsrsport@qsrbrands.com">qsrsport@qsrbrands.com</a>
+    <p>&copy; 2025 QSR Brands Sports & Recreation Club</p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop">&#8679;</button>
+
+  <!-- Scroll animation -->
+  <script>
+    const sections = document.querySelectorAll('.section-title, .event-highlight, .events-grid, .booking-btn-container');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    const backToTopBtn = document.getElementById("backToTop");
+    window.onscroll = function () {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    };
+    backToTopBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>

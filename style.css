@@ -1,0 +1,459 @@
+:root {
+  --dark-bg: #1e1e2f;
+  --primary: #ffd700;
+  --accent: #ff5023;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* Header */
+.hero-header {
+  background: url('image/header.jpg') center center / cover no-repeat;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+      text-shadow:
+        0 0 4px var(--dark-bg),
+        0 0 20px var(--dark-bg),
+        0 0 60px var(--dark-bg),
+        4px 4px 4px rgba(0, 0, 0, 2);
+}
+
+.hero-header .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.hero-header h1 {
+  color: var(--white);
+  font-size: 2.8rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: liftFade 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+
+/* Keyframes for the lift animation */
+@keyframes liftFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Events Section */
+.event-highlight {
+  background-color: #2c2c3d;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.event-highlight.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.event-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1000px;
+}
+
+.event-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.event-image:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.event-details {
+  flex: 1;
+}
+
+.event-details h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.event-details p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.btn-event {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: var(--accent);
+  color: var(--white);
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-event:hover {
+  background-color: #e03d12;
+}
+
+/* Events Grid Section - Product Card Style */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  padding: 40px 20px 60px;
+  justify-items: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.events-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.event-card {
+  background: #2c2c3d;
+  color: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 260px;
+  padding: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Makes content fill vertical space */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.3);
+}
+
+.event-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 12px;
+}
+
+.event-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 10px 0 20px; /* Added bottom margin to separate from button */
+}
+
+.event-card .price {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.event-card .add-btn {
+  margin-top: auto; /* Ensures button stays at the bottom */
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 22px;
+  font-weight: 500;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.event-card .add-btn:hover {
+  background-color: var(--primary);
+  color: var(--dark-bg);
+  border: none;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+
+/* Facilities Section */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 50px 0 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.classes-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 0 20px 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.classes-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.row {
+  display: grid;
+  gap: 20px;
+}
+
+.row-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.row-2 {
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
+.class-card {
+  background-color: #2c2c3d;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.class-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: #141414;
+  color: #fff;
+  box-shadow: 0 10px 20px var(--accent);
+}
+
+.class-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.class-card h3 {
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .event-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-container {
+    top: 10px;
+    right: 10px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .classes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .class-card {
+    width: 100%;
+  }
+}
+
+/* Booking Button */
+.booking-btn-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.btn-booking {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--primary);
+  color: var(--dark-bg);
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+.btn-booking:hover {
+  background-color: #e6c200;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+}
+
+.poster-image {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.poster-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.2);
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 20%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
+  display: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #e03d12;
+  transform: scale(1.1);
+}
+
+.flip-countdown {
+  background-color: #111;
+  padding: 30px 30px;
+  text-align: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.flip-countdown h2 {
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.flip-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: #222;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+  min-width: 80px;
+}
+
+.time-box div {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.time-box span {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffb347;
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+.colon {
+  font-size: 2.5rem;
+  color: #888;
+  padding: 0 5px;
+}

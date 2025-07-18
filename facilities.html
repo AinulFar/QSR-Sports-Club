@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Facilities | QSR Brands Sports & Recreation Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+ <style>
+  .hero-header {
+      background: url('image/facilities.jpg') center center / cover no-repeat;
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-header .overlay {
+      background-color: rgba(0, 0, 0, 0.5S);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .hero-header h1 {
+      color: var(--white);
+      font-size: 2.8rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: liftFade 1s ease-out forwards;
+      animation-delay: 0.3s;
+      text-shadow:
+        0 0 6px var(--dark-bg),
+        0 0 20px var(--dark-bg),
+        0 0 80px var(--dark-bg),
+        4px 4px 4px rgba(0, 0, 0, 4);
+    }
+ </style>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="hero-header">
+    <div class="overlay">
+      <div class="nav-container">
+        <nav id="navbar">
+          <a href="index.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="facilities.html">Facilities</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+      <h1>FACILITIES</h1>
+      <p>Discover the wide range of sports and recreational facilities we provide for your health, fitness, and fun!</p>
+    </div>
+  </header>
+
+  <!-- Facilities Section -->
+<h2 class="section-title">OUR FACILITIES</h2>
+<div class="classes-grid">
+  <!-- Row 1: 3 items -->
+  <div class="row row-3">
+    <div class="class-card">
+      <img src="image/table_tennis.jpg" alt="Table Tennis" />
+      <h3>TABLE TENNIS</h3>
+    </div>
+    <div class="class-card">
+      <img src="image/dart.jpg" alt="Dart" />
+      <h3>DART</h3>
+    </div>
+    <div class="class-card">
+      <img src="image/pool.jpg" alt="British Pool" />
+      <h3>BRITISH POOL</h3>
+    </div>
+  </div>
+
+  <!-- Row 2: 3 items -->
+  <div class="row row-3">
+    <div class="class-card">
+      <img src="image/chess.jpg" alt="Chess" />
+      <h3>CHESS</h3>
+    </div>
+    <div class="class-card">
+      <img src="image/carrom.jpg" alt="Carrom" />
+      <h3>CARROM</h3>
+    </div>
+    <div class="class-card">
+      <img src="image/gym.jpg" alt="Gym" />
+      <h3>GYM</h3>
+    </div>
+  </div>
+</div> <!-- ✅ CLOSE classes-grid here -->
+
+<!-- Booking Button (outside grid) -->
+<div class="booking-btn-container">
+  <a target="_blank" href="booking.html" class="btn-booking">Book a Facility</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Contact us at <a href="mailto:qsrsport@qsrbrands.com">qsrsport@qsrbrands.com</a> 
+  <p>&copy; 2025 QSR Brands Sports & Recreation Club</p>
+</footer>
+
+
+<button id="backToTop">&#8679;</button>
+
+  <!-- Scroll animation script -->
+  <script>
+    const sections = document.querySelectorAll('.section-title, .classes-grid');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>
